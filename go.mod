@@ -1,4 +1,4 @@
-module MyFitnessPro
+module github.com/MyFitnessPro/firebase
 
 go 1.21.3
 
