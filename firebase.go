@@ -40,7 +40,7 @@ func NewFirebaseClient(ctx context.Context, projectID string, secretsJSON []byte
 }
 
 // GetDocument returns the document for the given collection and document.
-func (f *FirebaseClient) getDocument(collection string, document string) (map[string]interface{}, error) {
+func (f *FirebaseClient) GetDocument(collection string, document string) (map[string]interface{}, error) {
 	firestoreClient, err := f.client.Firestore(f.ctx)
 	if handleError(err) {
 		return nil, err
@@ -57,7 +57,7 @@ func (f *FirebaseClient) getDocument(collection string, document string) (map[st
 }
 
 // DeleteDocument deletes the document for the given collection and document.
-func (f *FirebaseClient) deleteDocument(collection string, document string) error {
+func (f *FirebaseClient) DeleteDocument(collection string, document string) error {
 	firestoreClient, err := f.client.Firestore(f.ctx)
 	if handleError(err) {
 		return err
@@ -74,7 +74,7 @@ func (f *FirebaseClient) deleteDocument(collection string, document string) erro
 }
 
 // UpsertDocument upserts the document using the given data.
-func (f *FirebaseClient) upsertDocument(collection string, document string, data map[string]interface{}) error {
+func (f *FirebaseClient) UpsertDocument(collection string, document string, data map[string]interface{}) error {
 	firestoreClient, err := f.client.Firestore(f.ctx)
 	if handleError(err) {
 		return err
